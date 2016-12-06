@@ -2,8 +2,8 @@ require 'digest'
 class User < ActiveRecord::Base
   # Create a virtual attribute "password"
   # A virtual attribute is an attribute not corresponding to a column in DB.
-  atter_accessor :password 
-  atter_accessible :email, :name, :password, :password_confirmation
+  attr_accessor :password 
+  attr_accessible :email, :name, :password, :password_confirmation
   attr_accessible :email, :name
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name, :presence => true,
